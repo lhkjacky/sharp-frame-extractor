@@ -11,6 +11,8 @@ import tqdm
 from sharp_frame_extractor.SFEWorker import init_worker, extract
 from sharp_frame_extractor.estimator.BaseEstimator import BaseEstimator
 
+frame_name: str = Path(video_file).stem
+
 
 class SharpFrameExtractor:
     def __init__(self, estimator: BaseEstimator,
