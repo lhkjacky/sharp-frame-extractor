@@ -10,6 +10,7 @@ crop_factor: float = None
 output_path: str = None
 output_format: str = None
 min_sharpness: float = None
+frame_name: str = Path(video_file).stem
 
 
 def init_worker(params):
@@ -46,7 +47,7 @@ def extract(window):
     vidcap.set(cv2.CAP_PROP_POS_FRAMES, index)
     success, image = vidcap.read()
 
-    frame_name = Path(video_file).stem
+    
     frame_path = os.path.join(output_path, "%s%s%04d [%d].%s" % (prefix, frame_name, i, sharpness, output_format))
     cv2.imwrite(frame_path, image)
 
