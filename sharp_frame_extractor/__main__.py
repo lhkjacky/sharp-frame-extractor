@@ -7,7 +7,7 @@ from sharp_frame_extractor.SharpFrameExtractor import SharpFrameExtractor
 
 
 def parse_arguments():
-    avg_cpu_count = max(1, multiprocessing.cpu_count() // 4)
+    avg_cpu_count = max(1, multiprocessing.cpu_count())
     estimator_names = sorted(list(DefaultEstimators.keys()))
 
     a = argparse.ArgumentParser(
