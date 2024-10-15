@@ -10,7 +10,6 @@ crop_factor: float = None
 output_path: str = None
 output_format: str = None
 min_sharpness: float = None
-frame_name: str = Path(video_file).stem
 
 
 def init_worker(params):
