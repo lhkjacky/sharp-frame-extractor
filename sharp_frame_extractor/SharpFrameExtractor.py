@@ -3,6 +3,7 @@ import multiprocessing
 import os
 import time
 from multiprocessing import Pool
+from pathlib import Path
 
 import cv2
 import tqdm
@@ -32,7 +33,7 @@ class SharpFrameExtractor:
     def extract(self, video_file, output_path, window_size_ms, target_frame_count: int = -1):
         start_time = time.time()
         vidcap = cv2.VideoCapture(video_file)
-        output_path = video_file
+        output_path = Path(video_file).stem
 
         success, frame = vidcap.read()
 
