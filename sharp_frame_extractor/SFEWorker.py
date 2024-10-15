@@ -47,7 +47,7 @@ def extract(window):
     success, image = vidcap.read()
 
     
-    frame_path = os.path.join(output_path, "%s%s%04d [%d].%s" % (prefix, frame_name, i, sharpness, output_format))
+    frame_path = os.path.join(output_path, "%s%s%04d [%d].%s" % (prefix, output_path, i, sharpness, output_format))
     cv2.imwrite(frame_path, image)
 
     return frame_path, sharpness
