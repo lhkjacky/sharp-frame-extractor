@@ -26,7 +26,7 @@ def parse_arguments():
     a.add_argument("--min", default=0, type=float,
                    help="Minimum sharpness level which is dependent on the detection method used.")
     a.add_argument("--output", default='frames', help="Path where to store the frames.")
-    a.add_argument("--format", default="png", choices=['jpg', 'png', 'bmp', 'gif', 'tif'], help="Frame output format.")
+    a.add_argument("--format", default="jpg", choices=['jpg', 'png', 'bmp', 'gif', 'tif'], help="Frame output format.")
     a.add_argument("--cpu-count", default=avg_cpu_count, type=int,
                    help="How many CPU's are used for the extraction "
                         f"(default: {avg_cpu_count}).")
