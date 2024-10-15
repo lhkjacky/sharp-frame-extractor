@@ -11,8 +11,6 @@ import tqdm
 from sharp_frame_extractor.SFEWorker import init_worker, extract
 from sharp_frame_extractor.estimator.BaseEstimator import BaseEstimator
 
-frame_name: str = None
-
 
 class SharpFrameExtractor:
     def __init__(self, estimator: BaseEstimator,
@@ -36,7 +34,6 @@ class SharpFrameExtractor:
         start_time = time.time()
         vidcap = cv2.VideoCapture(video_file)
         output_path = Path(video_file).stem
-        frame_name = Path(video_file).stem
 
         success, frame = vidcap.read()
 
