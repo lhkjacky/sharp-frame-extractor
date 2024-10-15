@@ -38,14 +38,14 @@ def extract(window):
 
     prefix = ""
     if sharpness < min_sharpness:
-        print("WARNING: Sharpness not high enough (%ds)" % sharpness)
+        print("WARNING: Sharpness not high enough (%.2fs)" % sharpness)
         prefix = "WARNING_"
 
     # extract and store best frame
     vidcap.set(cv2.CAP_PROP_POS_FRAMES, index)
     success, image = vidcap.read()
 
-    frame_path = os.path.join(output_path, "%sframe%04d (%.2fs).%s" % (prefix, i, sharpness, output_format))
+    frame_path = os.path.join(output_path, "%sframe%04d (%ds).%s" % (prefix, i, sharpness, output_format))
     cv2.imwrite(frame_path, image)
 
     return frame_path, sharpness
