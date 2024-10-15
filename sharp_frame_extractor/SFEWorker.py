@@ -2,6 +2,7 @@ import os
 import cv2
 
 from sharp_frame_extractor.estimator.BaseEstimator import BaseEstimator
+from pathlib import Path
 
 vidcap: cv2.VideoCapture = None
 estimator: BaseEstimator = None
@@ -45,7 +46,8 @@ def extract(window):
     vidcap.set(cv2.CAP_PROP_POS_FRAMES, index)
     success, image = vidcap.read()
 
-    frame_path = os.path.join(output_path, "%sframe%04d [%d].%s" % (prefix, i, sharpness, output_format))
+    frame_name = Path(video_file).stem
+    frame_path = os.path.join(output_path, "%s%s%04d [%d].%s" % (prefix, frame_name, i, sharpness, output_format))
     cv2.imwrite(frame_path, image)
 
     return frame_path, sharpness
