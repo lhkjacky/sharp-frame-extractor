@@ -32,6 +32,7 @@ class SharpFrameExtractor:
     def extract(self, video_file, output_path, window_size_ms, target_frame_count: int = -1):
         start_time = time.time()
         vidcap = cv2.VideoCapture(video_file)
+        output_path = video_file
 
         success, frame = vidcap.read()
 
